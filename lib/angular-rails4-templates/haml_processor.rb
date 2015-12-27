@@ -1,5 +1,7 @@
 require 'angular-rails-templates/compact_javascript_escape'
-require 'haml'
+begin
+  require 'haml'
+rescue LoadError; end
 
 module AngularRails4Templates
   class HamlProcessor < Processor

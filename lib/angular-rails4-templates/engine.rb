@@ -52,10 +52,11 @@ module AngularRails4Templates
         #   app.assets.register_engine ".#{ext}", mimeless_engine
         # end
 
-        app.assets.register_mime_type 'text/ng-html', extensions: ['.nghtml']
-        app.assets.register_mime_type 'text/ng-haml', extensions: ['.nghaml']
-        app.assets.register_transformer 'text/ng-haml', 'application/javascript', AngularRails4Templates::HamlProcessor
-        app.assets.register_transformer 'text/ng-html', 'application/javascript', AngularRails4Templates::Processor
+
+        app.config.assets.register_mime_type 'text/ng-html', extensions: ['.nghtml']
+        app.config.assets.register_mime_type 'text/ng-haml', extensions: ['.nghaml']
+        app.config.assets.register_transformer 'text/ng-haml', 'application/javascript', AngularRails4Templates::HamlProcessor
+        app.config.assets.register_transformer 'text/ng-html', 'application/javascript', AngularRails4Templates::Processor
       end
 
       # Sprockets Cache Busting
